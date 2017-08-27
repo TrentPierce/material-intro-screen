@@ -26,7 +26,7 @@ repositories {
 #### Add gradle dependecy
 ```
 dependencies {
-	        compile 'com.github.TrentPierce:material-intro-screen:0.0.6'
+	        compile 'com.github.TrentPierce:material-intro-screen:-SNAPSHOT'
 	}
 ```
 ### Step 2:
