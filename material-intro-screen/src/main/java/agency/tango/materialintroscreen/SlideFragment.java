@@ -19,17 +19,23 @@ import agency.tango.materialintroscreen.parallax.ParallaxFragment;
 
 public class SlideFragment extends ParallaxFragment {
     private final static String BACKGROUND_COLOR = "background_color";
+    private final static String BACKGROUND_IMAGE = "background_image";
     private static final String BUTTONS_COLOR = "buttons_color";
     private static final String TITLE = "title";
     private static final String DESCRIPTION = "description";
     private static final String NEEDED_PERMISSIONS = "needed_permission";
     private static final String POSSIBLE_PERMISSIONS = "possible_permission";
     private static final String IMAGE = "image";
+    private static final String IMAGE_WIDTH = "image_width";
+    private static final String IMAGE_HEIGHT = "image_height";
     private static final int PERMISSIONS_REQUEST_CODE = 15621;
 
     private int backgroundColor;
+    private int backgroundImage;
     private int buttonsColor;
     private int image;
+    private int imageWidth;
+    private int imageHeight;
     private String title;
     private String description;
     private String[] neededPermissions;
@@ -44,8 +50,11 @@ public class SlideFragment extends ParallaxFragment {
 
         Bundle bundle = new Bundle();
         bundle.putInt(BACKGROUND_COLOR, builder.backgroundColor);
+        bundle.putInt(BACKGROUND_IMAGE, builder.backgroundImage);
         bundle.putInt(BUTTONS_COLOR, builder.buttonsColor);
         bundle.putInt(IMAGE, builder.image);
+        bundle.putInt(IMAGE_WIDTH, builder.imageWidth);
+        bundle.putInt(IMAGE_HEIGHT, builder.imageHeight);
         bundle.putString(TITLE, builder.title);
         bundle.putString(DESCRIPTION, builder.description);
         bundle.putStringArray(NEEDED_PERMISSIONS, builder.neededPermissions);
@@ -73,6 +82,7 @@ public class SlideFragment extends ParallaxFragment {
     public void initializeView() {
         Bundle bundle = getArguments();
         backgroundColor = bundle.getInt(BACKGROUND_COLOR);
+        backgroundImage = bundle.getInt(BACKGROUND_IMAGE);
         buttonsColor = bundle.getInt(BUTTONS_COLOR);
         image = bundle.getInt(IMAGE, 0);
         title = bundle.getString(TITLE);
@@ -86,6 +96,8 @@ public class SlideFragment extends ParallaxFragment {
     public int backgroundColor() {
         return backgroundColor;
     }
+
+    public int backgroundImage() { return backgroundImage; }
 
     public int buttonsColor() {
         return buttonsColor;
